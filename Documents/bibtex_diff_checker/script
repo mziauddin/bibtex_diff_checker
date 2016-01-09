@@ -1,0 +1,3 @@
+#!/bin/bash
+cd bibtex_diff_checker
+python view.py

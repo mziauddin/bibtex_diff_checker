@@ -1,0 +1,2 @@
+include script README requirements
+recursive-include docs *
