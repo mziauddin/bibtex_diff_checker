@@ -4,7 +4,7 @@ from setuptools import setup
 #You could be more specific.
 
 setup(name='Bibtex_Difference_Checker',
-      version='1.0',
+      version='1.1',
       description='This application aims to compare two bibtliographical reference database (.bib) files and allow the user to keep the reference records in sync on both the files',
       # url='http://github.com/storborg/funniest',
       author='Mohammed Ziauddin',
