@@ -4,7 +4,7 @@ from setuptools import setup
 #You could be more specific.
 
 setup(name='Bibtex_Difference_Checker',
-      version='1.1',
+      version='1.8',
       description='This application aims to compare two bibtliographical reference database (.bib) files and allow the user to keep the reference records in sync on both the files',
       # url='http://github.com/storborg/funniest',
       author='Mohammed Ziauddin',
@@ -12,14 +12,14 @@ setup(name='Bibtex_Difference_Checker',
       # license='MIT',
       packages=['bibtex_diff_checker'],
       install_requires=[
-          'bibtexparser','gitpython','Cython','UnQLite'
+          'bibtexparser','gitpython','Cython','unqlite==0.2.0'
       ],      
       test_suite='nose.collector',
       tests_require=['nose'],
       scripts=['script'],
       classifiers = [
               'Programming Language :: Python',
-              'Development Status :: 1- Beta',
+              'Development Status :: 4 - Beta',
               'Natural Language :: English',
               'Intended Audience :: Developers',
               'License :: OSI Approved :: Apache Software License',

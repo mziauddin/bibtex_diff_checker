@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: Bibtex_Difference_Checker
+Version: 1.8
+Summary: This application aims to compare two bibtliographical reference database (.bib) files and allow the user to keep the reference records in sync on both the files
+Home-page: UNKNOWN
+Author: Mohammed Ziauddin
+Author-email: mdziauddin@ku.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks

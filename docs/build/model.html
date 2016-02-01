@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Model Module Documentation &mdash; bibtex_diff_checker 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="bibtex_diff_checker 1.1 documentation" href="index.html" />
+    <link rel="next" title="Controller Module Documentation" href="controller.html" />
+    <link rel="prev" title="View Module Documentation" href="view.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-model">
+<span id="model-module-documentation"></span><h1>Model Module Documentation<a class="headerlink" href="#module-model" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="model.Model">
+<em class="property">class </em><code class="descclassname">model.</code><code class="descname">Model</code><span class="sig-paren">(</span><em>conn</em>, <em>master</em>, <em>local</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and maintains the MongoDb and Bibtex databases</p>
+<dl class="attribute">
+<dt id="model.Model.mongo_local">
+<code class="descname">mongo_local</code><em class="property"> = None</em><a class="headerlink" href="#model.Model.mongo_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>define collection where I&#8217;ll insert my master files data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="model.Model.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>is_update</em>, <em>list_change</em>, <em>list_add</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Model.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the mongodb collections
+Args:</p>
+<blockquote>
+<div>is_update:Flag indicates if the user made any selections to update the current local file
+list_change: List of properties for each record that have different values on the master file and the local file
+list_add: List of properties for each record that are present on the master file but not on the local</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="model.Model.update_bibtexDB">
+<code class="descname">update_bibtexDB</code><span class="sig-paren">(</span><em>is_update</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Model.update_bibtexDB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the bibtex database with the records from the mongo database
+Args:</p>
+<blockquote>
+<div>is_update:Flag indicates if the user made any selections to update the current local file</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="model.add_property_db">
+<code class="descclassname">model.</code><code class="descname">add_property_db</code><span class="sig-paren">(</span><em>list</em>, <em>db_coll</em><span class="sig-paren">)</span><a class="headerlink" href="#model.add_property_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the records in the database collection with the values from the list
+Args:</p>
+<blockquote>
+<div>list: List of properties for each record that are present on the master file but not on the local
+db_coll: database collection that will to be updated</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="model.change_property_db">
+<code class="descclassname">model.</code><code class="descname">change_property_db</code><span class="sig-paren">(</span><em>list</em>, <em>db_coll</em><span class="sig-paren">)</span><a class="headerlink" href="#model.change_property_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the records in the database collection with the modified values from the list
+Args:</p>
+<blockquote>
+<div>list: List of properties for each record that have different values on the master file and the local file
+db_coll: database collection that will to be updated</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="model.delete_duplicates_from_collection">
+<code class="descclassname">model.</code><code class="descname">delete_duplicates_from_collection</code><span class="sig-paren">(</span><em>coll</em><span class="sig-paren">)</span><a class="headerlink" href="#model.delete_duplicates_from_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes duplicates entries from the collection
+Args:</p>
+<blockquote>
+<div>coll: Mongo Database Collection</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="model.update_bibtex_mongoDB">
+<code class="descclassname">model.</code><code class="descname">update_bibtex_mongoDB</code><span class="sig-paren">(</span><em>is_update</em>, <em>bibdatabase</em>, <em>mongodb_coll</em><span class="sig-paren">)</span><a class="headerlink" href="#model.update_bibtex_mongoDB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the bibtex database by comparing the properties for each record with records from the mongo database
+Args:</p>
+<blockquote>
+<div>is_update:Flag indicates if the user made any selections to update the current local file
+bibdatabase: Bibtex database that needs to be updated
+mongodb_coll:Mongo database collection</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="view.html" title="previous chapter">View Module Documentation</a></li>
+      <li>Next: <a href="controller.html" title="next chapter">Controller Module Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/model.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Mohammed Ziauddin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/model.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

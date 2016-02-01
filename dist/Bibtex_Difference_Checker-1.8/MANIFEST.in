@@ -1,0 +1,3 @@
+include script README requirements
+recursive-include docs *
+recursive-include bibtex_diff_checker/test *

@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>View Module Documentation &mdash; bibtex_diff_checker 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="bibtex_diff_checker 1.1 documentation" href="index.html" />
+    <link rel="next" title="Model Module Documentation" href="model.html" />
+    <link rel="prev" title="Bibtex Comparator" href="bibtex_comparator.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-view">
+<span id="view-module-documentation"></span><h1>View Module Documentation<a class="headerlink" href="#module-view" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="view.View">
+<em class="property">class </em><code class="descclassname">view.</code><code class="descname">View</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#view.View" title="Permalink to this definition">¶</a></dt>
+<dd><p>..class:: View
+This class is used for getting user inputs. It uses the tkinter GUI package. 
+..data::master_file</p>
+<blockquote>
+<div>StringVar() variable holds the name of the master file</div></blockquote>
+<dl class="docutils">
+<dt>..data::local_file</dt>
+<dd>StringVar() variable holds the name of the local file</dd>
+<dt>..data::master_path</dt>
+<dd>StringVar() variable holds the name of the directory which holds the master file</dd>
+<dt>..data::local_path</dt>
+<dd>StringVar() variable holds the name of the directory which holds the local file</dd>
+</dl>
+<dl class="method">
+<dt id="view.View.call_controller">
+<code class="descname">call_controller</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.View.call_controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the controller instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.choose_option">
+<code class="descname">choose_option</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.View.choose_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>check for the option user selected and help the user select his files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.View.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>deletes the instance of View , commits the new added features to the local file to the remote repository and deletes all the temporary directories
+that were created for this application</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.list_differences">
+<code class="descname">list_differences</code><span class="sig-paren">(</span><em>list</em>, <em>list2</em><span class="sig-paren">)</span><a class="headerlink" href="#view.View.list_differences" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a window to display the differences between the two files as two categories: one shows the differences between values of
+the two properties for a record and the other shows the property present in the master file but not in the local file
+Args:</p>
+<blockquote>
+<div>list: list of record that have a difference in properties on the master file and the local file
+list2:list of record that have a property on the master file which is not present on the local file</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.openlocalfile">
+<code class="descname">openlocalfile</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#view.View.openlocalfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>method is used to select a file from the local hard disk</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.openmasterfile">
+<code class="descname">openmasterfile</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#view.View.openmasterfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>method is used to select a file from the local hard disk</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.select_disk_files">
+<code class="descname">select_disk_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.View.select_disk_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a new window to input the two repositories from which the two bibtex files will be selected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.select_files">
+<code class="descname">select_files</code><span class="sig-paren">(</span><em>repo1</em>, <em>repo2</em>, <em>branch1</em>, <em>branch2</em><span class="sig-paren">)</span><a class="headerlink" href="#view.View.select_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>given the names of two repositories and their branch names this method creates a local repository and pulls down the content from git</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.select_git_files">
+<code class="descname">select_git_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.View.select_git_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a new window and accepts the names of the two git repositories to be used by the application</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="view.View.select_rb_files">
+<code class="descname">select_rb_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.View.select_rb_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a window which list the different bibtex files present in the local directories of both the master and local repositories</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="view.commit_remote">
+<code class="descclassname">view.</code><code class="descname">commit_remote</code><span class="sig-paren">(</span><em>repo</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#view.commit_remote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commits to the index of the local git repository and calls the git push
+Args:</p>
+<blockquote>
+<div><p>repo: Reference to the head of the local git repository
+file: File that will be added to the index for the commit and push</p>
+<blockquote>
+<div>to the remote git repository</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Raises:</dt>
+<dd>git.exc.GitCommandError: If git.push() fails</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="view.create_local_repo">
+<code class="descclassname">view.</code><code class="descname">create_local_repo</code><span class="sig-paren">(</span><em>remote_git</em>, <em>dir</em>, <em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#view.create_local_repo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the git.clone_from method to clone a remote git repository locally
+Args:</p>
+<blockquote>
+<div><p>remote_git: Url of the remote git repository
+dir: Local directory where the contents of the</p>
+<blockquote>
+<div>remote git will be downloaded</div></blockquote>
+<p>branch: Name of the branch on the remote git which will be used for cloning</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>git.repo: Reference to the local git repository</dd>
+<dt>Raises:</dt>
+<dd>git.exc.InvalidGitRepositoryError: If remote git repository is bare
+git.exc.GitCommandError: If remote git repository does not exist</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="view.extract_bib_files">
+<code class="descclassname">view.</code><code class="descname">extract_bib_files</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#view.extract_bib_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts all the bib files from the given path
+Args:</p>
+<blockquote>
+<div>path : The directory name from which bib files will be extracted</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>List[string]: Returns a list of bib files present in path</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bibtex_comparator.html" title="previous chapter">Bibtex Comparator</a></li>
+      <li>Next: <a href="model.html" title="next chapter">Model Module Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/view.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Mohammed Ziauddin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/view.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

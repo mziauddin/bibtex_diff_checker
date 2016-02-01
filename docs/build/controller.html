@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Controller Module Documentation &mdash; bibtex_diff_checker 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="bibtex_diff_checker 1.1 documentation" href="index.html" />
+    <link rel="prev" title="Model Module Documentation" href="model.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="controller-module-documentation">
+<h1>Controller Module Documentation<a class="headerlink" href="#controller-module-documentation" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-controller"></span><dl class="class">
+<dt id="controller.Controller">
+<em class="property">class </em><code class="descclassname">controller.</code><code class="descname">Controller</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used as an interface between the model and the view</p>
+<dl class="method">
+<dt id="controller.Controller.compare_files">
+<code class="descname">compare_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controller.compare_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse the two bibtex files using bibtex parser and create two bibtex databases replicate those two databases as mongo databases compare the records from the local file with records from the master file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="controller.Controller.file_update">
+<code class="descname">file_update</code><span class="sig-paren">(</span><em>is_update</em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controller.file_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the current local file with changes selected by the user
+Args:</p>
+<blockquote>
+<div>is_update: Flag indicates if the user made any selections to update the current local file</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="controller.Controller.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>is_update</em>, <em>list_change</em>, <em>list_add</em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controller.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model and the local file with the user driven modifications and close the controller instance
+Args:</p>
+<blockquote>
+<div>is_update: Flag indicates if the user made any selections to update the current local file
+list_change: List of properties for each record that have different values on the master file and the local file
+list_add: List of properties for each record that are present on the master file but not on the local</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="controller.compare_records">
+<code class="descclassname">controller.</code><code class="descname">compare_records</code><span class="sig-paren">(</span><em>coll1</em>, <em>coll2</em><span class="sig-paren">)</span><a class="headerlink" href="#controller.compare_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares the records in the mongo db collection coll1 with the records in collection coll2 and prepares two lists
+Args:</p>
+<blockquote>
+<div>coll1: Local File MongoDb collection
+coll2: Master File MongoDb collection</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>(list1,list2): list1 has records with properties having different values on the two colelctions </dt>
+<dd>list2 has records with properties present in coll2 but not in coll1</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="controller.connect_mongo">
+<code class="descclassname">controller.</code><code class="descname">connect_mongo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#controller.connect_mongo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the pymongo client
+Raises:</p>
+<blockquote>
+<div>pymongo.errors.ConnectionFailure: If no mongo server is running</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="controller.delete_id">
+<code class="descclassname">controller.</code><code class="descname">delete_id</code><span class="sig-paren">(</span><em>elem</em><span class="sig-paren">)</span><a class="headerlink" href="#controller.delete_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the property &#8216;_id&#8217; from the dictionary
+Args:</p>
+<blockquote>
+<div>elem: Dictionary</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="model.html" title="previous chapter">Model Module Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/controller.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Mohammed Ziauddin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/controller.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,4 @@
+bibtexparser
+gitpython
+Cython
+unqlite==0.2.0
