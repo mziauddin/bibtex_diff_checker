@@ -12,7 +12,7 @@ setup(name='Bibtex_Difference_Checker',
       # license='MIT',
       packages=['bibtex_diff_checker'],
       install_requires=[
-          'bibtexparser','gitpython','UnQLite'
+          'bibtexparser','gitpython','Cython','UnQLite'
       ],      
       test_suite='nose.collector',
       tests_require=['nose'],
