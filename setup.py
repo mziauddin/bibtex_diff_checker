@@ -2,7 +2,7 @@ from setuptools import setup
 #This is a list of files to install, and where
 #(relative to the 'root' dir, where setup.py is)
 #You could be more specific.
-
+#edits to track git changes
 setup(name='Bibtex_Difference_Checker',
       version='2.1',
       description='This application aims to compare two bibtliographical reference database (.bib) files and allow the user to keep the reference records in sync on both the files',
